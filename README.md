@@ -44,6 +44,8 @@ export APP_JWT_SECRET='troque-este-segredo'
 go run ./cmd/server
 ```
 
+> O backend usa driver SQLite pure Go (sem CGO), evitando falhas de compilacao em ambientes com /tmp limitado.
+
 ### Frontend
 
 ```bash

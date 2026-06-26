@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/example/ag-directory-manager/internal/config"
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 const schema = `
@@ -112,7 +112,7 @@ func OpenAndMigrate(cfg config.Config) (*sql.DB, error) {
 		return nil, fmt.Errorf("create sqlite directory: %w", err)
 	}
 
-	db, err := sql.Open("sqlite3", cfg.SQLitePath)
+	db, err := sql.Open("sqlite", cfg.SQLitePath)
 	if err != nil {
 		return nil, fmt.Errorf("open sqlite: %w", err)
 	}

@@ -5,3 +5,4 @@ frontend/*.tsbuildinfo
 .env
 .DS_Store
 *.log
+agdm-server
