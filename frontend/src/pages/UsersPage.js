@@ -1,9 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useMemo, useState } from "react";
-import { useUsers } from "../hooks/useUsers";
-export function UsersPage() {
-    const [search, setSearch] = useState("");
-    const { data, isLoading } = useUsers(search);
-    const rows = useMemo(() => data ?? [], [data]);
-    return (_jsxs("section", { children: [_jsx("h2", { className: "mb-4 text-2xl font-semibold", children: "Usu\u00E1rios" }), _jsx("input", { className: "mb-4 w-full max-w-sm rounded border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-900", placeholder: "Pesquisar usu\u00E1rio...", value: search, onChange: (e) => setSearch(e.target.value) }), isLoading ? (_jsx("p", { className: "text-sm text-slate-500", children: "Carregando usu\u00E1rios..." })) : (_jsx("div", { className: "overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700", children: _jsxs("table", { className: "min-w-full text-sm", children: [_jsx("thead", { className: "bg-slate-100 dark:bg-slate-800", children: _jsxs("tr", { children: [_jsx("th", { className: "px-3 py-2 text-left", children: "Nome" }), _jsx("th", { className: "px-3 py-2 text-left", children: "Login" }), _jsx("th", { className: "px-3 py-2 text-left", children: "Departamento" }), _jsx("th", { className: "px-3 py-2 text-left", children: "OU" }), _jsx("th", { className: "px-3 py-2 text-left", children: "Status" })] }) }), _jsx("tbody", { children: rows.map((user) => (_jsxs("tr", { className: "border-t border-slate-100 dark:border-slate-800", children: [_jsx("td", { className: "px-3 py-2", children: user.displayName }), _jsx("td", { className: "px-3 py-2", children: user.username }), _jsx("td", { className: "px-3 py-2", children: user.department }), _jsx("td", { className: "px-3 py-2", children: user.ou }), _jsx("td", { className: "px-3 py-2", children: user.enabled ? "Habilitado" : "Desabilitado" })] }, user.id))) })] }) }))] }));
-}
