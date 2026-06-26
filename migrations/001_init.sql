@@ -1,0 +1,2 @@
+-- Initial schema managed by internal migration bootstrap
+-- See internal/database/sqlite.go
